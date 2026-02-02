@@ -46,11 +46,10 @@ app.get('/api/v1/query', (req,res)=>{
     }
     if (sortedProducts.length < 1){
         // res.status(200).send('no product found')
-        res.status(200).json({ success: true,  data: []})
-
+        return res.status(200).json({ success: true,  data: []})
     }
 
-    res.status(200).json(sortedProducts)
+    return res.status(200).json(sortedProducts)
 })
 app.listen(5000, ()=>{
     console.log('server listening port 5000...')
